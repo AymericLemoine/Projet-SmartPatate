@@ -1,4 +1,4 @@
-# 
+
 #define SET(x,y) (x |=(1<<y))				
 #define CLR(x,y) (x &= (~(1<<y)))       	
 #define CHK(x,y) (x & (1<<y))           		
@@ -11,10 +11,6 @@
 float results[N];           
 float freq[N];           
 int sizeOfArray = N;
-
- 
-   
-   
 
 void setup()
 {
@@ -32,7 +28,7 @@ void setup()
   Serial.begin(115200);
 
   for(int i=0;i<N;i++)
-    results[i]=0;        
+  results[i]=0;        
 }
 
 void loop()
@@ -42,7 +38,9 @@ void loop()
   int counter = 0;
   int frec = 0;
   for(unsigned int d=0;d<N;d++)
+  
   {
+  
     int v=analogRead(0);   
     CLR(TCCR1B,0);         
     TCNT1=0;               
@@ -51,15 +49,13 @@ void loop()
     SET(TCCR1B,0);          
 
     results[d]=results[d]*0.5+(float)(v)*0.5; 
-   
     freq[d] = d;
     
   }
 
-
   TOG(PORTB,0);            
-  
   frec = analogRead(A0);
+  
   Serial.println(frec);
     
     if ( frec >=100 &&  frec<=125) //rien
