@@ -65,6 +65,7 @@ void loop()
  
 
   TOG(PORTB,0);            //-Toggle pin 8 after each sweep (good for scope)
+  
   frec = analogRead(A0);
   Serial.println(frec);
     
