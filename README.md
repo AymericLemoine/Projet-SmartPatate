@@ -1,29 +1,8 @@
-# Projet-SmartPatate
-//****************************************************************************************
-// Illutron take on Disney style capacitive touch sensor using only passives and Arduino
-// Dzl 2012
-//****************************************************************************************
-
-
-//                              10n
-// PIN 9 --[10k]-+-----10mH---+--||-- OBJECT
-//               |            |
-//              3.3k          |
-//               |            V 1N4148 diode
-//              GND           |
-//                            |
-//Analog 0 ---+------+--------+
-//            |      |
-//          100pf   1MOmhm
-//            |      |
-//           GND    GND
-
-
-
-#define SET(x,y) (x |=(1<<y)) //-Bit set/clear macros
-#define CLR(x,y) (x &= (~(1<<y)))       // |
-#define CHK(x,y) (x & (1<<y))           // |
-#define TOG(x,y) (x^=(1<<y))             //-+
+# 
+#define SET(x,y) (x |=(1<<y))				//-Bit set/clear macros
+#define CLR(x,y) (x &= (~(1<<y)))       		// |
+#define CHK(x,y) (x & (1<<y))           		// |
+#define TOG(x,y) (x^=(1<<y))            		//-+
 
 
 
